@@ -1,0 +1,212 @@
+.animated {
+  transition: opacity 1.5s, transform 2s;
+
+  &.to-right {
+    transform: translateX(-300px);
+    opacity:   0;
+  }
+
+  &.to-left {
+    transform: translateX(50px);
+    opacity:   0;
+  }
+
+  &.to-top {
+    transform: translateY(300px);
+    opacity:   0;
+  }
+
+  &.to-bottom {
+    transform: translateY(-200px);
+    opacity:   0;
+  }
+
+  &.fade-in {
+    opacity: 0;
+  }
+
+  &.first-info {
+    transform: translateX(200px);
+    opacity: 0;
+    transition-delay: 0.6s;
+  }
+  &.second-info {
+    transform: translateX(200px);
+    opacity: 0;
+    transition-delay: 1s;
+  }
+  &.third-info {
+    transform: translateX(200px);
+    opacity: 0;
+    transition-delay: 1.4s;
+  }
+}
+
+.animated-leftBanner {
+  opacity:   0;
+}
+
+.leftBanner-animate {
+  animation-duration:        .8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode:       both;
+  @include desktop {
+    &:nth-child(1) {
+      animation-name: to-right;
+      animation-delay: .6s;
+    }
+    &:nth-child(2) {
+      animation-name: to-right;
+      animation-delay: 1s;
+    }
+  }
+  @include small-laptop {
+    animation-name: fade-in;
+  }
+}
+
+.animated-rightBanner {
+  opacity:   0;
+}
+
+.rightBanner-animate {
+  animation-duration:        .8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode:       both;
+  @include desktop {
+    &:nth-child(1) {
+      animation-name: to-left;
+      animation-delay: .6s;
+    }
+    &:nth-child(2) {
+      animation-name: to-left;
+      animation-delay: 1s;
+    }
+  }
+  @include small-laptop {
+    animation-name: fade-in;
+  }
+}
+
+.animated-advantages {
+  opacity:   0;
+}
+
+.advantages-animate {
+  animation-duration:        .8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode:       both;
+  @include desktop {
+    &:nth-child(3) {
+      animation-name: to-left;
+      animation-delay: 0s;
+    }
+    &:nth-child(5) {
+      animation-name: to-right;
+      animation-delay: .2s;
+    }
+    &:nth-child(2) {
+      animation-name: to-top;
+      animation-delay: .4s;
+    }
+    &:nth-child(4) {
+      animation-name: to-left;
+      animation-delay: .6s;
+    }
+    &:nth-child(1) {
+      animation-name: to-right;
+      animation-delay: 0.8s;
+    }
+    &:nth-child(6) {
+      animation-name: to-left;
+      animation-delay: 1s;
+    }
+  }
+  @include small-tablet {
+    animation-name: fade-in;
+  }
+}
+
+.animated-delivery {
+  opacity:   0;
+}
+
+.delivery-animate {
+  animation-duration:        .8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode:       both;
+  @include desktop {
+    &:nth-child(2) {
+      animation-name: to-top;
+      animation-delay: 0s;
+    }
+    &:nth-child(1) {
+      animation-name: to-right;
+      animation-delay: .3s;
+    }
+    &:nth-child(3) {
+      animation-name: to-left;
+      animation-delay: .6s;
+    }
+    &:nth-child(4) {
+      animation-name: to-left;
+      animation-delay: .9s;
+    }
+  }
+  @include small-laptop {
+    animation-name: fade-in;
+  }
+}
+
+@keyframes to-left {
+  0% {
+    opacity:   0;
+    transform: translateX(150px);
+  }
+  100% {
+    opacity:   1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes to-right {
+  0% {
+    opacity:   0;
+    transform: translateX(-150px);
+  }
+  100% {
+    opacity:   1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes to-top {
+  0% {
+    opacity:   0;
+    transform: translateY(300px);
+  }
+  100% {
+    opacity:   1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes to-bottom {
+  0% {
+    opacity:   0;
+    transform: translateY(-150px);
+  }
+  100% {
+    opacity:   1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

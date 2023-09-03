@@ -1,0 +1,211 @@
+.main-footer {
+  background-color: $black;
+  overflow-x: hidden;
+  .main-footer__body {
+    padding-top: 108px;
+    padding-bottom: 50px;
+    position: relative;
+    .body__info {
+      display: flex;
+      flex-direction: column;
+      .info__name {
+        color: $white;
+        font-family: $graphik;
+        font-weight: 700;
+        font-size: 70px;
+        line-height: 70px;
+      }
+      .info__contacts {
+        margin-top: 50px;
+        .contacts__body {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-top: 30px;
+          color: $white;
+          text-underline-offset: 5px;
+          transition: all 0.4s ease-in-out;
+          &:first-child {
+            margin-top: unset;
+          }
+          div {
+            svg {
+              display: flex;
+              width: 45px;
+              height: 45px;
+              circle {
+                fill: $white;
+                transition: all 0.4s ease-in-out;
+              }
+              path {
+                fill: $yellow;
+                transition: all 0.4s ease-in-out;
+              }
+            }
+          }
+          p {
+            margin-left: 15px;
+            max-width: 225px;
+            width: 100%;
+            color: $white;
+            font-family: $graphik;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 25px;
+            transition: all 0.4s ease-in-out;
+          }
+          &:hover {
+            color: $yellow;
+            div {
+              svg {
+                circle {
+                  fill: $yellow;
+                }
+                path {
+                  fill: $white;
+                }
+              }
+            }
+            p {
+              color: $yellow;
+            }
+          }
+        }
+      }
+      .info__order {
+        max-width: 309px;
+        width: 100%;
+        margin-top: 50px;
+        padding: 14px 30px;
+        border-radius: 25px;
+        background-color: $yellow;
+        color: $black;
+        font-family: $graphik;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        text-decoration: none;
+        transition: all 0.4s ease-in-out;
+        &:hover {
+          background-color: $white;
+        }
+      }
+      .info__bottom {
+        display: flex;
+        flex-direction: column;
+        margin-top: 93px;
+        .bottom__copyright {
+          color: $white;
+          font-family: $graphik;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 14px;
+        }
+        .bottom__privacy {
+          margin-top: 15px;
+          color: $white;
+          font-family: $graphik;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 14px;
+          text-underline-offset: 5px;
+          transition: all 0.4s ease-in-out;
+          &:hover {
+            color: $yellow;
+          }
+        }
+        .bottom__studio {
+          margin-top: 15px;
+          color: $white;
+          font-family: $graphik;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 14px;
+          a {
+            color: $yellow;
+            text-underline-offset: 5px;
+            transition: all 0.4s ease-in-out;
+            &:hover {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+    .body__map {
+      position: absolute;
+      top: 116px;
+      left: 463px;
+      .ymaps-2-1-79-map {
+        width: 1069px !important;
+        height: 577px !important;
+        .ymaps-2-1-79-float-button,
+        .ymaps-2-1-79-controls__control_toolbar,
+        .ymaps-2-1-79-gotoymaps__container,
+        .ymaps-2-1-79-gototech,
+        .ymaps-2-1-79-zoom__scale,
+        .ymaps-2-1-79-scaleline,
+        .ymaps-2-1-79-copyright__content {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@include small-tablet {
+  .main-footer {
+    .main-footer__body {
+      padding-top: 623px;
+      padding-bottom: 35px;
+      .body__info {
+        align-items: center;
+        .info__name {
+          font-size: 35px;
+          line-height: 35px;
+        }
+        .info__contacts {
+          margin-top: 40px;
+          .contacts__body {
+            p {
+              max-width: 208px;
+            }
+          }
+        }
+        .info__order {
+          max-width: 263px;
+          margin-top: 40px;
+          padding: 14px 23px;
+          font-size: 14px;
+          line-height: 19px;
+        }
+        .info__bottom {
+          margin-top: 40px;
+          align-items: center;
+        }
+      }
+      .body__map {
+        top: 0;
+        left: 0;
+        right: 0;
+        .ymaps-2-1-79-map {
+          height: 577px !important;
+        }
+      }
+    }
+  }
+}
+
+@include horizontal-mobile {
+  .main-footer {
+    .main-footer__body {
+      padding-top: 521px;
+      .body__map {
+        .ymaps-2-1-79-map {
+          width: 895px !important;
+          height: 475px !important;
+        }
+      }
+    }
+  }
+}

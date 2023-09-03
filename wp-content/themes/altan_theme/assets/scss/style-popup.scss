@@ -1,0 +1,838 @@
+.mfp-content {
+  width: unset !important;
+  .wpcf7-not-valid {
+    border: 1px solid red !important;
+  }
+  .popup__order {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    background-color: #FFFFFF;
+    position: relative;
+    @include horizontal-mobile {
+      padding: 20px;
+    }
+    .mfp-close {
+      width: unset;
+      height: unset;
+      padding: unset;
+      opacity: unset;
+      font-size: unset;
+      line-height: unset;
+      text-align: unset;
+      top: 5px;
+      right: 5px;
+    }
+    .order__closed {
+      cursor: pointer;
+      svg {
+        rect {
+          display: none;
+        }
+        path {
+          stroke: $black;
+          stroke-width: 2px;
+          transition: stroke-width 0.4s ease-in-out;
+        }
+      }
+      &:hover {
+        svg {
+          path {
+            stroke-width: 3px;
+          }
+        }
+      }
+    }
+    .order__first-text {
+      margin-top: 5px;
+      color: $black;
+      font-family: $graphik;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 30px;
+      @include horizontal-mobile {
+        margin-top: 30px;
+      }
+    }
+    .order__second-text {
+      margin-top: 15px;
+      text-align: center;
+      max-width: 353px;
+      width: 100%;
+      color: $black;
+      font-family: $graphik;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 14px;
+    }
+    .order__form {
+      .phone, .mail {
+        margin-top: 14px !important;
+      }
+      .name, .phone, .mail {
+        position: relative;
+        margin-top: 24px;
+        .name-label, .phone-label, .mail-label {
+          cursor: text;
+          position: absolute;
+          top: 35px;
+          left: 20px;
+          z-index: 99;
+          color: $gray;
+          font-family: $graphik;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 18px;
+          transition: all 0.4s ease-in-out;
+        }
+        .name-label.active, .phone-label.active, .mail-label.active {
+          top: -2px;
+          color: $black;
+          font-family: $graphik;
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 13px;
+        }
+        .name-input, .phone-input, .mail-input {
+          padding: 25px 21px;
+          max-width: 440px;
+          width: 100%;
+          height: 55px;
+          border: 1px solid $gray;
+          border-radius: 27.5px;
+          font-family: $graphik;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 18px;
+          transition: border 0.4s ease-in-out;
+          &:focus {
+            border: 1px solid $black;
+          }
+        }
+      }
+      .message {
+        position: relative;
+        margin-top: 14px;
+        .message-label {
+          cursor: text;
+          position: absolute;
+          top: 35px;
+          left: 20px;
+          z-index: 99;
+          color: $gray;
+          font-family: $graphik;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 18px;
+          transition: all 0.4s ease-in-out;
+        }
+        .message-label.active {
+          top: -2px;
+          color: $black;
+          font-family: $graphik;
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 13px;
+        }
+        .message-input {
+          padding: 25px 21px;
+          max-width: 440px;
+          height: 110px;
+          width: 100%;
+          border: 1px solid $gray;
+          border-radius: 27.5px;
+          font-family: $graphik;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 18px;
+          transition: border 0.4s ease-in-out;
+          &:focus {
+            border: 1px solid $black;
+          }
+        }
+      }
+      .privacy {
+        margin-top: 15px;
+        .wpcf7-list-item {
+          margin: unset;
+          label {
+            display: flex;
+            input[type=checkbox] {
+              cursor: pointer;
+              border: 1px solid #1c1c1c;
+              width: 24px;
+              height: 20px;
+              margin: unset !important;
+              padding: unset !important;
+              &:checked:before {
+                content: "";
+                position: absolute;
+                top: -3px;
+                left: 2px;
+                width: 18px;
+                height: 18px;
+                background-image: url("/wp-content/themes/altan_theme/assets/images/popup-accept-1.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+              }
+            }
+            .wpcf7-list-item-label {
+              width: calc(100% + 29px);
+              margin-left: 15px;
+              color: $black;
+              font-family: $graphik;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 14px;
+              a {
+                color: $black;
+                text-underline-offset: 3px;
+              }
+            }
+          }
+        }
+      }
+      .wpcf7-spinner {
+        display: none;
+      }
+      .accept-button {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 440px;
+        width: 100%;
+        height: 50px;
+        border-radius: 25px;
+        border: unset;
+        background-color: $yellow;
+        color: $black;
+        font-family: $graphik;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          background-color: $black;
+          color: $white;
+        }
+        &:disabled {
+          background-color: $gray;
+          color: $white;
+        }
+      }
+      .wpcf7-response-output {
+        display: none;
+      }
+    }
+  }
+
+  .popup__reverse {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    background-color: #FFFFFF;
+    position: relative;
+    @include horizontal-mobile {
+      padding: 20px;
+    }
+    .mfp-close {
+      width: unset;
+      height: unset;
+      padding: unset;
+      opacity: unset;
+      font-size: unset;
+      line-height: unset;
+      text-align: unset;
+      top: 5px;
+      right: 5px;
+    }
+    .reverse__closed {
+      cursor: pointer;
+      svg {
+        rect {
+          display: none;
+        }
+        path {
+          stroke: $black;
+          stroke-width: 2px;
+          transition: stroke-width 0.4s ease-in-out;
+        }
+      }
+      &:hover {
+        svg {
+          path {
+            stroke-width: 3px;
+          }
+        }
+      }
+    }
+    .reverse__first-text {
+      margin-top: 5px;
+      color: $black;
+      font-family: $graphik;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 30px;
+      @include horizontal-mobile {
+        margin-top: 30px;
+      }
+    }
+    .reverse__second-text {
+      margin-top: 15px;
+      text-align: center;
+      max-width: 353px;
+      width: 100%;
+      color: $black;
+      font-family: $graphik;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 14px;
+    }
+    .reverse__form {
+      .phone, .mail {
+        margin-top: 14px !important;
+      }
+      .name, .phone, .mail {
+        position: relative;
+        margin-top: 24px;
+        .name-label, .phone-label, .mail-label {
+          cursor: text;
+          position: absolute;
+          top: 35px;
+          left: 20px;
+          z-index: 99;
+          color: $gray;
+          font-family: $graphik;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 18px;
+          transition: all 0.4s ease-in-out;
+        }
+        .name-label.active, .phone-label.active, .mail-label.active {
+          top: -2px;
+          color: $black;
+          font-family: $graphik;
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 13px;
+        }
+        .name-input, .phone-input, .mail-input {
+          padding: 25px 21px;
+          max-width: 440px;
+          width: 100%;
+          height: 55px;
+          border: 1px solid $gray;
+          border-radius: 27.5px;
+          font-family: $graphik;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 18px;
+          transition: border 0.4s ease-in-out;
+          &:focus {
+            border: 1px solid $black;
+          }
+        }
+      }
+      .privacy {
+        margin-top: 15px;
+        .wpcf7-list-item {
+          margin: unset;
+          label {
+            display: flex;
+            input[type=checkbox] {
+              cursor: pointer;
+              border: 1px solid #1c1c1c;
+              width: 24px;
+              height: 20px;
+              margin: unset !important;
+              padding: unset !important;
+              &:checked:before {
+                content: "";
+                position: absolute;
+                top: -3px;
+                left: 2px;
+                width: 18px;
+                height: 18px;
+                background-image: url("/wp-content/themes/altan_theme/assets/images/popup-accept-1.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+              }
+            }
+            .wpcf7-list-item-label {
+              width: calc(100% + 29px);
+              margin-left: 15px;
+              color: $black;
+              font-family: $graphik;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 14px;
+              a {
+                color: $black;
+                text-underline-offset: 3px;
+              }
+            }
+          }
+        }
+      }
+      .wpcf7-spinner {
+        display: none;
+      }
+      .accept-button {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 440px;
+        width: 100%;
+        height: 50px;
+        border-radius: 25px;
+        border: unset;
+        background-color: $yellow;
+        color: $black;
+        font-family: $graphik;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          background-color: $black;
+          color: $white;
+        }
+        &:disabled {
+          background-color: $gray;
+          color: $white;
+        }
+      }
+      .wpcf7-response-output {
+        display: none;
+      }
+    }
+  }
+
+  .popup__price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    padding: 50px 60px 45px 60px;
+    background-color: #FFFFFF;
+    position: relative;
+    @include horizontal-mobile {
+      padding: 20px;
+    }
+    .mfp-close {
+      width: unset;
+      height: unset;
+      padding: unset;
+      opacity: unset;
+      font-size: unset;
+      line-height: unset;
+      text-align: unset;
+      top: 5px;
+      right: 5px;
+    }
+    .price__closed {
+      cursor: pointer;
+      svg {
+        rect {
+          display: none;
+        }
+        path {
+          stroke: $black;
+          stroke-width: 2px;
+          transition: stroke-width 0.4s ease-in-out;
+        }
+      }
+      &:hover {
+        svg {
+          path {
+            stroke-width: 3px;
+          }
+        }
+      }
+    }
+    .price__first-text {
+      text-transform: uppercase;
+      text-align: center;
+      color: $black;
+      font-family: $graphik;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 30px;
+      @include horizontal-mobile {
+        margin-top: 30px;
+      }
+    }
+    .price__form {
+      .mail {
+        position: relative;
+        margin-top: 40px;
+        .mail-label {
+          cursor: text;
+          position: absolute;
+          top: 35px;
+          left: 20px;
+          z-index: 99;
+          color: $gray;
+          font-family: $graphik;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 18px;
+          transition: all 0.4s ease-in-out;
+        }
+        .mail-label.active {
+          top: -2px;
+          color: $black;
+          font-family: $graphik;
+          font-weight: 400;
+          font-size: 13px;
+          line-height: 13px;
+        }
+        .mail-input {
+          padding: 25px 21px;
+          max-width: 475px;
+          width: 100%;
+          height: 55px;
+          border: 1px solid $gray;
+          border-radius: 27.5px;
+          font-family: $graphik;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 18px;
+          transition: border 0.4s ease-in-out;
+          &:focus {
+            border: 1px solid $black;
+          }
+        }
+      }
+      .wpcf7-spinner {
+        display: none;
+      }
+      .accept-button {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 475px;
+        width: 100%;
+        height: 50px;
+        border-radius: 25px;
+        border: unset;
+        background-color: $yellow;
+        color: $black;
+        font-family: $graphik;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 22px;
+        transition: all 0.4s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          background-color: $black;
+          color: $white;
+        }
+        &:disabled {
+          background-color: $gray;
+          color: $white;
+        }
+      }
+      .wpcf7-response-output {
+        display: none;
+      }
+    }
+  }
+
+  .popup__sent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 540px;
+    width: 100%;
+    padding: 30px;
+    background-color: #FFFFFF;
+    position: relative;
+    .mfp-close {
+      width: unset;
+      height: unset;
+      padding: unset;
+      opacity: unset;
+      font-size: unset;
+      line-height: unset;
+      text-align: unset;
+      top: 5px;
+      right: 5px;
+    }
+    .sent__closed {
+      cursor: pointer;
+      svg {
+        rect {
+          display: none;
+        }
+        path {
+          stroke: $black;
+          stroke-width: 2px;
+          transition: stroke-width 0.4s ease-in-out;
+        }
+      }
+      &:hover {
+        svg {
+          path {
+            stroke-width: 3px;
+          }
+        }
+      }
+    }
+    .sent__info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .info__icon {
+        position: absolute;
+        top: -40px;
+      }
+      .info__top {
+        max-width: 340px;
+        width: 100%;
+        text-align: center;
+        margin-top: 120px;
+        color: $black;
+        font-family: $graphik;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 36px;
+      }
+      .info__bottom {
+        text-align: center;
+        max-width: 340px;
+        width: 100%;
+        margin-top: 30px;
+        color: $black;
+        font-family: $graphik;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+}
+
+@include horizontal-mobile {
+  .mfp-content {
+    .popup__order {
+      padding: 20px;
+      .order__first-text {
+        margin-top: 30px;
+        font-size: 25px;
+        line-height: 25px;
+      }
+      .order__second-text {
+        margin-top: 23px;
+        font-size: 16px;
+        line-height: 16px;
+      }
+      .order__form {
+        .phone, .mail {
+          margin-top: 14px !important;
+        }
+        .name, .phone, .mail {
+          position: relative;
+          margin-top: 24px;
+          .name-label, .phone-label, .mail-label {
+            font-size: 16px;
+            line-height: 16px;
+            top: 31px;
+          }
+          .name-label.active, .phone-label.active, .mail-label.active {
+            font-size: 14px;
+            line-height: 14px;
+          }
+          .name-input, .phone-input, .mail-input {
+            padding: 21px 18px;
+            height: 45px;
+            font-size: 16px;
+            line-height: 16px;
+          }
+        }
+        .message {
+          position: relative;
+          margin-top: 14px;
+          .message-label {
+            font-size: 16px;
+            line-height: 16px;
+            top: 31px;
+          }
+          .message-label.active {
+            font-size: 14px;
+            line-height: 14px;
+          }
+          .message-input {
+            padding: 21px 18px;
+            height: 95px;
+            font-size: 16px;
+            line-height: 16px;
+          }
+        }
+        .privacy {
+          margin-top: 18px;
+          .wpcf7-list-item {
+            label {
+              display: flex;
+              .wpcf7-list-item-label {
+                margin-left: 15px;
+              }
+            }
+          }
+        }
+        .wpcf7-spinner {
+          display: none;
+        }
+        .accept-button {
+          height: 45px;
+          font-size: 14px;
+          line-height: 19px;
+        }
+        .wpcf7-response-output {
+          display: none;
+        }
+      }
+    }
+
+    .popup__reverse {
+      padding: 20px;
+      .reverse__first-text {
+        margin-top: 30px;
+        font-size: 25px;
+        line-height: 25px;
+      }
+      .reverse__second-text {
+        margin-top: 23px;
+        font-size: 16px;
+        line-height: 16px;
+      }
+      .reverse__form {
+        .phone, .mail {
+          margin-top: 14px !important;
+        }
+        .name, .phone, .mail {
+          position: relative;
+          margin-top: 24px;
+          .name-label, .phone-label, .mail-label {
+            font-size: 16px;
+            line-height: 16px;
+            top: 31px;
+          }
+          .name-label.active, .phone-label.active, .mail-label.active {
+            font-size: 14px;
+            line-height: 14px;
+          }
+          .name-input, .phone-input, .mail-input {
+            padding: 21px 18px;
+            height: 45px;
+            font-size: 16px;
+            line-height: 16px;
+          }
+        }
+        .privacy {
+          margin-top: 18px;
+          .wpcf7-list-item {
+            label {
+              display: flex;
+              .wpcf7-list-item-label {
+                margin-left: 15px;
+              }
+            }
+          }
+        }
+        .wpcf7-spinner {
+          display: none;
+        }
+        .accept-button {
+          height: 45px;
+          font-size: 14px;
+          line-height: 19px;
+        }
+        .wpcf7-response-output {
+          display: none;
+        }
+      }
+    }
+
+    .popup__price {
+      padding: 20px;
+      .price__first-text {
+        margin-top: 30px;
+        font-size: 25px;
+        line-height: 25px;
+        br {
+          display: none;
+        }
+      }
+      .price__form {
+        .mail {
+          position: relative;
+          margin-top: 24px;
+          .mail-label {
+            font-size: 16px;
+            line-height: 16px;
+            top: 31px;
+          }
+          .mail-label.active {
+            font-size: 14px;
+            line-height: 14px;
+          }
+          .mail-input {
+            padding: 21px 18px;
+            height: 45px;
+            font-size: 16px;
+            line-height: 16px;
+          }
+        }
+        .wpcf7-spinner {
+          display: none;
+        }
+        .accept-button {
+          height: 45px;
+          font-size: 14px;
+          line-height: 19px;
+        }
+        .wpcf7-response-output {
+          display: none;
+        }
+      }
+    }
+
+    .popup__sent {
+      width: 100%;
+      padding: 20px;
+      .sent__info {
+        .info__icon {
+          position: absolute;
+          top: -40px;
+          svg {
+            width: 120px;
+            height: 120px;
+          }
+        }
+        .info__top {
+          margin-top: 72px;
+          font-size: 25px;
+          line-height: 25px;
+        }
+        .info__bottom {
+          margin-top: 20px;
+          font-size: 16px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.privacy__body {
+  .body__content {
+    .content__title {
+      color: $black;
+      font-family: $graphik;
+      font-weight: 700;
+      font-size: 70px;
+      line-height: 70px;
+    }
+    .content__content {
+      padding-top: 30px;
+      padding-bottom: 50px;
+      p {
+        color: $black;
+        font-family: $graphik;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+}

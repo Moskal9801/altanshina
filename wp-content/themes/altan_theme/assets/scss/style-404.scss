@@ -1,0 +1,92 @@
+.page-404 {
+  overflow: hidden;
+  .page-404__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $yellow;
+    background-image: url("/wp-content/themes/altan_theme/assets/images/background-404.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    min-height: calc(100vh - 106px);
+    width: 100vw;
+    .body__error-text {
+      color: $black;
+      font-family: $graphik;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 40px;
+    }
+    .body__404-info {
+      margin-top: 60px;
+      .desktop-svg {
+        display: flex;
+      }
+      .mobile-svg {
+        display: none;
+      }
+    }
+    .body__error-info {
+      margin-top: 36px;
+      color: $black;
+      font-family: $graphik;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 25px;
+    }
+    .body__error-button {
+      margin-top: 32px;
+      text-align: center;
+      padding: 14px 80px;
+      background-color: $black;
+      color: $white;
+      font-family: $graphik;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 22px;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: all 0.4s ease-in-out;
+      &:hover {
+        background-color: $yellow;
+        color: $black;
+      }
+    }
+  }
+}
+
+@include small-tablet {
+  .page-404 {
+    .page-404__body {
+      background-image: url("/wp-content/themes/altan_theme/assets/images/background-404-1.png");
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      .body__error-text {
+        font-size: 25px;
+        line-height: 25px;
+      }
+      .body__404-info {
+        margin-top: 60px;
+        .desktop-svg {
+          display: none;
+        }
+        .mobile-svg {
+          display: flex;
+        }
+      }
+      .body__error-info {
+        margin-top: 30px;
+        font-size: 16px;
+        line-height: 16px;
+      }
+      .body__error-button {
+        margin-top: 45px;
+        font-size: 14px;
+        line-height: 19px;
+      }
+    }
+  }
+}
